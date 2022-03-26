@@ -22,6 +22,22 @@ groupname
 groupname2
 ```
 
+**👁️‍🗨 Inventory at a Glance**
+
+*🖥️ at the prompt:*
+```
+ansible-inventory --graph
+# Result
+@all:
+  |--@centos:
+  |  |--node1
+  |  |--node2
+  |  |--node3
+  |--@localhost:
+  |  |--127.0.0.1
+  |--@ungrouped:
+```  
+
 ### Modules 
 Ansible works against multiple managed nodes or “hosts” in your infrastructure at the same time, using a list or group of lists known as inventory. Once your inventory is defined, you use patterns to select the hosts or groups you want Ansible to run against.
 
@@ -39,7 +55,7 @@ ansible all -m command -a "cat /etc/hostname"
 ### Variables 
 Ansible uses variables to manage differences between systems. With Ansible, you can execute tasks and playbooks on multiple different systems with a single command. To represent the variations among those different systems, you can create variables with standard YAML syntax, including lists and dictionaries. You can define these variables in your playbooks, in your inventory, in re-usable files or roles, or at the command line. You can also create variables during a playbook run by registering the return value or values of a task as a new variable.
 
-See also: [Ansible Special Variables](https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html). Ansible has a few variables that you may not set or use the names of. 
+See also: [Ansible Special Variables](https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html). Check the Ansible Special Variables page for information on variables names that are reserved by Ansible, and may not be used in your playbook. 
 
 **Playbook with variables specified in the file**
 
@@ -124,3 +140,18 @@ become_user = ansible
 - List all available modules: `ansible-doc -l` 
 - Open module documentatin: `ansible-doc <modulename>` 
 - Show only the paramters used: `ansible-doc -s <modulename>` 
+
+### 🍴 Manage parallelism
+[Ansible Glossary: Forks/Parallelism](https://docs.ansible.com/ansible/latest/reference_appendices/glossary.html#term-Forks) 
+
+*🖥️ at the prompt:* 
+```
+ansible all -m ping --forks 10
+ansible all -m ping -f 10
+```
+
+*📃 ~/myproject/ansible.cfg* 
+```
+[defaults]
+forks = 10
+```
