@@ -17,7 +17,7 @@ nodename
 nodename
 nodename
 
-[biggergroup_name]
+[biggergroup_name:children]
 groupname
 groupname2
 ```
