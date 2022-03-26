@@ -10,8 +10,6 @@
     1. Memory: 1GB
     1. Quantity: 3x (or more)
 
-Check [Environment-Setup.md](./Environment-Setup.md)
-
 ## Install and configure Ansible Control Node 
 Install required packages
 To be able to run Ansible, some packages are required:
