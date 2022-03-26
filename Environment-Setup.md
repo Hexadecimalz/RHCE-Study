@@ -26,7 +26,6 @@ sudo subscription-manager repos | grep -i ansible-2.9
 sudo subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
 sudo dnf install ansible -y 
 
-
 ### Version check
 ansible --version
 ansible 2.9.27
@@ -37,7 +36,7 @@ ansible 2.9.27
   python version = 3.6.8 (default, Sep  9 2021, 07:49:02) [GCC 8.5.0 20210514 (Red Hat 8.5.0-3)]
 ``` 
 
-## Configured Ansible User with Sudo Access on Managed Node 
+## Configure Ansible User with Sudo Access on Managed Node 
 1. On each node include the master node create an ansible user. 
     `sudo useradd ansible`
     `sudo passwd ansible` 
