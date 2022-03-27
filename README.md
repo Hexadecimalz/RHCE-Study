@@ -1,5 +1,5 @@
 # 🐧 RHCE-Study
-Here are published notes for a private RHCE study group. You can find notes within the sub folders on this repo. This repository is not affiliated with RedHat in any way, it is an independent and private study project. 
+Here are published notes for a private RHCE study group. You can find notes within the sub folders on this repo. This repository is not affiliated with Red Hat in any way, it is an independent and private study project. 
 
 ## 🖥️ Recommended Environment
 1. Master Node
@@ -17,7 +17,7 @@ See: [Red Hat Developer Program](https://developers.redhat.com/about). After log
 For more details see: [Environment-Setup.md](./Environment-Setup.md)
 
 ## ℹ Formatting Notes
-Ansible relies on playbooks, which are files formatted in YAML, but those playbooks are run at the command line. 
+Ansible relies on playbooks, which are files formatted in [YAML](https://docs.ansible.com/ansible-core/devel/reference_appendices/glossary.html#term-YAML), but those playbooks are run at the command line. 
 In order to make it more clear which is which, we've tried to add the following indicators for files versus commands: 
 
 - *📃 playbook.yml* = file with name and extension specified after (may also include a relative path)

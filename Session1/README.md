@@ -138,7 +138,7 @@ become_user = ansible
 
 ### Ansible Documentation 
 - List all available modules: `ansible-doc -l` 
-- Open module documentatin: `ansible-doc <modulename>` 
+- Open module documentation: `ansible-doc <modulename>` 
 - Show only the paramters used: `ansible-doc -s <modulename>` 
 
 ### 🍴 Manage parallelism
