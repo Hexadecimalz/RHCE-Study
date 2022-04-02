@@ -1,0 +1,47 @@
+---
+- hosts: node1
+  become: true 
+  vars:
+    - username: Bobby
+    - user_uid: 1200 
+  tasks: 
+    - name: Create a group 
+      group: 
+        name: accounting 
+        state: present 
+        gid: 1500 
+    - name: Create a user
+      user: 
+        name: "{{ username }}"
+        uid: "{{ user_uid }}"
+        groups: wheel, accounting
+        password: "{{ 'Password123' | password_hash('sha512') }}"
+    - name: Manage a service
+      service: 
+        name: httpd
+        state: started
+        enabled: yes
+    - name: Manage a firewall port
+      firewalld:
+        service: http
+        immediate: yes
+        permanent: yes
+        state: enabled
+    - name: Create a test file
+      file:
+        path: /home/ansible/testfile
+        state: touch 
+        owner: "{{ username }}"
+    - name: Copy contents to a file
+      copy: 
+        path: /home/ansible/testfile
+        dest: /home/ansible/testfile
+        content: |
+          This is line1 
+          This is line2   
+    - name: Create a cron job
+      cron: 
+        name: 'The Heist'
+        job: logger 
+        minute: '*'
+        state: present  
