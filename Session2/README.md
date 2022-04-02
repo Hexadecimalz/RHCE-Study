@@ -151,4 +151,4 @@ For the full playbook see: [playbook1.yml](playbook1.yml)
 
 ### 🐚 Shell Scripts to Run Ad Hoc commands 
 
-See: 
+See: [adhoc-script.sh](adhoc-script.sh)
