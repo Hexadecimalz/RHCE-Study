@@ -139,7 +139,7 @@ become_user = ansible
 ### Ansible Documentation 
 - List all available modules: `ansible-doc -l` 
 - Open module documentation: `ansible-doc <modulename>` 
-- Show only the paramters used: `ansible-doc -s <modulename>` 
+- Show only the parameters used: `ansible-doc -s <modulename>` 
 
 ### 🍴 Manage parallelism
 [Ansible Glossary: Forks/Parallelism](https://docs.ansible.com/ansible/latest/reference_appendices/glossary.html#term-Forks) 
