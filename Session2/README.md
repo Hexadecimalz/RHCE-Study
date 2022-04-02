@@ -1,5 +1,7 @@
 # Session 2
 
+### **Recording:** https://drive.google.com/drive/folders/1wU_CqxdovgIlH4YYPDJO4brJbnjcmR0-?usp=sharing
+
 ## Ansible Basics 
 
 Using ad hoc commands will allow you to quickly manage a host using a variety of modules or commands you are already familiar with. 
