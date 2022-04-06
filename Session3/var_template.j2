@@ -1,0 +1,11 @@
+A Jinja2 Template for Ansible Facts
+
+Username: {{ username }}
+Planet: {{ planet }}
+2 + 5 = {{ 2 + 5 }}
+
+{% for device in ansible_devices %}
+{{ device }} - {{ ansible_devices[device]['size'] }}
+{% endfor %}
+
+IP Address: {{ ansible_default_ipv4.address }}

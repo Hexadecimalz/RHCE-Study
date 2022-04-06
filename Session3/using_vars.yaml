@@ -4,6 +4,7 @@
   vars_files:
     - unencrypted_vars.yaml
     - encrypted_vars.yaml
+    # Last file added takes precedence over the files above it
 
   vars:
     - username: Natalie

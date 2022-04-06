@@ -1,0 +1,13 @@
+---
+- hosts: all
+
+  tasks:
+    - name: Print IP Address
+      debug:
+        msg: This Shows!
+      when: ansible_default_ipv4.address == "192.168.1.150" and ansible_hostname == "node1"
+
+    - name: Still Print
+      debug:
+        msg: Still shows!
+      when: ansible_default_ipv4.address == "crap" or ansible_hostname == "node1"
