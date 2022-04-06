@@ -1,0 +1,26 @@
+---
+- hosts: node1
+
+  vars_files:
+    - unencrypted_vars.yaml
+    - encrypted_vars.yaml
+
+  vars:
+    - username: Natalie
+    - firstname: June
+    - lastname: Parker
+    - planet: Solas
+
+  tasks:
+    - name: Run a command
+      shell: echo Red Hat Certified Engineer
+      register: runout
+
+    - name: Use registered variable
+      debug:
+        var: "{{ item }}"
+      with_items:
+        - runout
+        - runout.stdout
+        - runout.stdout_lines
+        - username

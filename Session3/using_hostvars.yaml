@@ -1,0 +1,7 @@
+---
+- hosts: node1
+
+  tasks:
+    - name: Print out variable
+      debug:
+        var: username
