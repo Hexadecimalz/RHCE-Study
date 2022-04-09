@@ -1,2 +1,9 @@
 ---
 # tasks file for session3/s3role
+- name: Print out role variables
+  debug:
+    var: "{{ item }}"
+  with_items:
+    - username
+    - planet
+    - game

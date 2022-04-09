@@ -1,11 +1,20 @@
 ---
 - hosts: all
+#  gather_facts: no
 
   tasks:
+    - name: Print out some facts
+      debug:
+        var: "{{ item }}"
+      with_items:
+        - ansible_default_ipv4.address
+        - ansible_cmdline
+        - ansible_devices['sda']['size']
+
     - name: Print IP Address
       debug:
         msg: This Shows!
-      when: ansible_default_ipv4.address == "192.168.1.150" and ansible_hostname == "node1"
+      when: (ansible_default_ipv4.address == "192.168.1.150") and ((ansible_hostname == "node1") or (ansible_hostname == "node2"))
 
     - name: Still Print
       debug:

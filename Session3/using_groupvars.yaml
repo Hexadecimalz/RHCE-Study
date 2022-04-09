@@ -1,0 +1,10 @@
+---
+- hosts: node1
+
+  tasks:
+    - name: Print variable
+      debug:
+        var: "{{ item }}"
+      with_items:
+        - httpd_port
+        - authorization

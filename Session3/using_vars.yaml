@@ -2,9 +2,8 @@
 - hosts: node1
 
   vars_files:
-    - unencrypted_vars.yaml
     - encrypted_vars.yaml
-    # Last file added takes precedence over the files above it
+    - unencrypted_vars.yaml
 
   vars:
     - username: Natalie
@@ -16,6 +15,10 @@
     - name: Run a command
       shell: echo Red Hat Certified Engineer
       register: runout
+
+    - name: Use single variable
+      debug:
+        var: username
 
     - name: Use registered variable
       debug:

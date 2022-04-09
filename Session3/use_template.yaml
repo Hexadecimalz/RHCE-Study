@@ -1,0 +1,10 @@
+---
+- hosts: all
+
+  ignore_unreachable: yes
+
+  tasks:
+    - name: Transfer template
+      template:
+        src: var_template.j2
+        dest: /home/ansible/madefrmtemplate
