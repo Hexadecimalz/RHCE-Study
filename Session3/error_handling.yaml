@@ -1,0 +1,17 @@
+---
+- hosts: all
+  max_fail_percentage: 90
+
+  tasks:
+    - name: Using failed_when
+      ignore_errors: yes
+      shell: echo hello world bye
+      register: runout
+      failed_when: "'bye' in runout.stdout"
+
+    - name: Using changed_when
+      ignore_unreachable: yes
+      shell: echo Am I a change ?
+      register: changedout
+      changed_when: "'change' in changedout.stdout"
+      
