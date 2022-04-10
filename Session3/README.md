@@ -85,7 +85,7 @@ See: [using_conditionals.yaml](using_conditionals.yaml)
     - name: Print out is Disk exists 
       debug: 
         msg: "Storage exists!" 
-       when: ansible_deviced['sda'] is defined
+       when: ansible_device['sda'] is defined
 ```
 
 You can also put each condition in its own parentheses (ansible_hostname == "x") and (ansible_user_dir == "other"). You can also supply multiple levels of parentheses to have nested conditionals. 
